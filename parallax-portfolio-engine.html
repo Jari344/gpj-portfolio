@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parallax Portfolio Engine · GPJ Codes</title>
+<meta name="description" content="A scroll-driven animation engine for cinematic portfolio pages, written in vanilla JavaScript.">
+<meta name="theme-color" content="#0b0b0a">
+<link rel="canonical" href="https://jari-portfolio.vercel.app/project/parallax-portfolio-engine.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GPJ Codes">
+<meta property="og:title" content="Parallax Portfolio Engine · GPJ Codes">
+<meta property="og:description" content="A scroll-driven animation engine for cinematic portfolio pages, written in vanilla JavaScript.">
+<meta property="og:url" content="https://jari-portfolio.vercel.app/project/parallax-portfolio-engine.html">
+<meta property="og:image" content="https://jari-portfolio.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jari-portfolio.vercel.app/og.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jari-portfolio.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://jari-portfolio.vercel.app/projects.html"}, {"@type": "ListItem", "position": 3, "name": "Parallax Portfolio Engine", "item": "https://jari-portfolio.vercel.app/project/parallax-portfolio-engine.html"}]}</script>
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{if(sessionStorage.getItem('gpj-pt')){sessionStorage.removeItem('gpj-pt');d.classList.add('pt-in');setTimeout(function(){d.classList.remove('pt-in')},3500)}}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages.css">
+<noscript><style>#intro,#pt{display:none}html.lock{overflow:auto}</style></noscript>
+</head>
+<body id="top" data-page="project" data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+<div id="bar" aria-hidden="true"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div class="cur" id="cur" aria-hidden="true"><i></i><span></span></div>
+<div id="pt" aria-hidden="true"><span>GPJ</span></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="ar" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol><filter id="dst" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".012 .02" numOctaves="1" seed="3" result="n"/><feDisplacementMap id="dm" in="SourceGraphic" in2="n" scale="0"/></filter></svg>
+<nav class="nav" aria-label="Primary">
+  <a class="logo" href="../index.html" aria-label="Jari Abbas, home">JARI ABBAS</a>
+  <div class="links"><i class="ind" aria-hidden="true"></i>
+    <div class="dd"><a href="../projects.html" data-k="work" aria-current="page">Work</a><button class="ddb" type="button" aria-expanded="false" aria-controls="dd-work"><span class="sr">Work categories</span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></button>
+      <ul class="ddm" id="dd-work"><li><a href="../projects.html">All projects<small>14</small></a></li><li><a href="../projects.html?cat=sites">Websites<small>6</small></a></li><li><a href="../projects.html?cat=ai">AI &amp; apps<small>1</small></a></li><li><a href="../projects.html?cat=3d">3D &amp; interactive<small>2</small></a></li><li><a href="../projects.html?cat=labs">Experiments &amp; tools<small>5</small></a></li></ul></div>
+    <a href="../about.html" data-k="about">About</a>
+    <a href="../index.html#services" data-k="services">Services</a>
+    <a href="../contact.html" data-k="contact">Contact</a>
+  </div>
+  <button class="sbtn" type="button" data-search aria-label="Search the site" aria-haspopup="dialog" aria-expanded="false"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></button>
+  <button class="mbtn" id="mbtn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span></button>
+</nav>
+<div id="menu">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../projects.html">Work</a><div class="msub"><a href="../projects.html?cat=sites">Websites</a><a href="../projects.html?cat=ai">AI &amp; apps</a><a href="../projects.html?cat=3d">3D &amp; interactive</a><a href="../projects.html?cat=labs">Experiments &amp; tools</a></div></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <button class="m-search" type="button" data-search><svg class="i" aria-hidden="true"><use href="#i-search"/></svg> Search</button>
+</div>
+<div id="srch" hidden role="dialog" aria-modal="true" aria-label="Search">
+  <div class="s-bg"></div>
+  <div class="s-box">
+    <div class="s-top">
+      <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="sq" type="search" role="combobox" aria-expanded="true" aria-controls="sres" aria-autocomplete="list" aria-label="Search the site" placeholder="Search projects, tools, pages…" autocomplete="off" spellcheck="false">
+      <button id="sclose" type="button" aria-label="Close search"><span aria-hidden="true">Esc</span></button>
+    </div>
+    <p class="s-stat" id="sstat" role="status" aria-live="polite"></p>
+    <ul id="sres" role="listbox" aria-label="Search results"></ul>
+  </div>
+</div>
+<main id="main" class="pg pj" style="--c1:#1d1534;--c2:linear-gradient(135deg,#2c1f52,#150e2b)">
+<header class="pj-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../projects.html">Projects</a></li><li aria-current="page">Parallax Portfolio Engine</li></ol></nav>
+    <p class="cat">Motion / Library</p>
+    <h1 class="pj-h"><span class="t1">Parallax Portfolio Engine</span></h1>
+  </div>
+  <div class="wrap"><div class="pj-stage clip" data-cursor="Move"><div class="art-in"><canvas class="gl3d" data-scene="layers" data-mobile data-w="1280" data-h="640" data-off="0" aria-hidden="true"></canvas><div class="g" aria-hidden="true">P</div></div><span class="st concept">Concept</span></div></div>
+</header>
+<section class="wrap pj-facts rv" aria-label="Project facts">
+  <dl>
+    <div><dt>Type</dt><dd>Motion / Library</dd></div>
+    <div><dt>Status</dt><dd><span class="st concept">Concept</span></dd></div>
+    <div><dt>Group</dt><dd><a href="../projects.html?cat=labs">Experiments &amp; tools</a></dd></div>
+    <div class="wide"><dt>Built with</dt><dd><ul class="tags" aria-label="Technologies used"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></dd></div>
+  </dl>
+  <div class="acts"><span class="go off" aria-disabled="true">Live demo · link coming soon</span><span class="go off" aria-disabled="true">Source · link coming soon</span></div>
+</section>
+<section class="wrap pj-body">
+  <div class="pj-col rv"><h2 class="h3">About this project</h2><p class="pj-lead">A scroll-driven animation engine for cinematic portfolio pages, written in vanilla JavaScript.</p><h2 class="h3">Problem it solves</h2><p>Gives long pages depth without heavy animation libraries.</p></div>
+  <aside class="pj-aside rv"><h2 class="h3">What “Concept” means</h2><p>A practice build or an idea, made to learn something.</p></aside>
+</section>
+
+<section class="wrap rel" aria-labelledby="rel-h"><h2 id="rel-h" class="h2s" data-chars>More projects</h2>
+  <ul class="pgrid">
+<li class="gc rv" data-cat="sites" data-s="live" data-q="gpj portfolio this website portfolio this portfolio: a site with 3d scenes, scroll animation and a page for every project, built in html, css and javascript with gsap and three.js. html css javascript gsap three.js live websites" data-tilt="5" style="--c1:#1c2b05;--c2:linear-gradient(135deg,#2c4208,#0b0b0a)">
+<div class="art"><div class="art-in"><canvas class="gl3d" data-scene="browser" aria-hidden="true"></canvas><div class="g" aria-hidden="true">G</div></div><span class="st live">Live</span></div>
+<div class="gc-meta"><p class="cat">Portfolio</p><h3><a href="../project/gpj-portfolio.html"><span class="t1">GPJ Portfolio</span> <span class="t2">This website</span></a></h3><p class="gd">This portfolio: a site with 3D scenes, scroll animation and a page for every project, built in HTML, CSS and JavaScript with GSAP and Three.js.</p><ul class="tags" aria-label="Main technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div></li>
+<li class="gc rv" data-cat="sites" data-s="built" data-q="shadow resets manga hub web / editorial an interactive web portal for the original sci-fi mystery manga series shadow resets, featuring volume readers, world-building lore, character profiles, and an arc timeline. html css javascript svg ui/ux built · no live url yet websites" data-tilt="5" style="--c1:#0d0d1a;--c2:linear-gradient(135deg,#180828,#2a0810)">
+<div class="art"><div class="art-in"><canvas class="gl3d" data-scene="hourglass" aria-hidden="true"></canvas><div class="g" aria-hidden="true">S</div></div><span class="st built">Built · no live URL yet</span></div>
+<div class="gc-meta"><p class="cat">Web / Editorial</p><h3><a href="../project/shadow-resets.html"><span class="t1">Shadow Resets</span> <span class="t2">Manga Hub</span></a></h3><p class="gd">An interactive web portal for the original sci-fi mystery manga series Shadow Resets, featuring volume readers, world-building lore, character profiles, and an arc timeline.</p><ul class="tags" aria-label="Main technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div></li>
+<li class="gc rv" data-cat="labs" data-s="built" data-q="atomic explorer 118 elements data visualisation an interactive periodic table and real-time bohr model visualizer for all 118 elements, featuring animated electron shells, orbit speed controls, category filters, and instant search. javascript canvas api chemistry data viz built · no live url yet experiments &amp; tools" data-tilt="5" style="--c1:#020510;--c2:linear-gradient(135deg,#051d33,#020510)">
+<div class="art"><div class="art-in"><canvas class="gl3d" data-scene="atom" aria-hidden="true"></canvas><div class="g" aria-hidden="true">A</div></div><span class="st built">Built · no live URL yet</span></div>
+<div class="gc-meta"><p class="cat">Data visualisation</p><h3><a href="../project/atomic-explorer.html"><span class="t1">Atomic Explorer</span> <span class="t2">118 Elements</span></a></h3><p class="gd">An interactive periodic table and real-time Bohr model visualizer for all 118 elements, featuring animated electron shells, orbit speed controls, category filters, and instant search.</p><ul class="tags" aria-label="Main technologies"><li>JavaScript</li><li>Canvas API</li><li>Chemistry</li></ul></div></li>
+  </ul>
+</section>
+<nav class="wrap pn" aria-label="Project navigation">
+  <a class="pn-p" href="matrix-rain.html" data-cursor="Prev"><small>Previous</small><b>Matrix Rain</b></a>
+  <a class="pn-n" href="nexapi-gateway.html" data-cursor="Next"><small>Next</small><b>NexAPI Gateway</b></a>
+</nav>
+</main>
+<section class="ct ct-sm" data-light aria-labelledby="cta-h">
+  <div class="wrap cta-in"><h2 id="cta-h" class="cta-h">Want something like this?</h2><a class="orbtn mag" href="../contact.html?type=Something%20else&ref=Parallax%20Portfolio%20Engine" data-cursor="Go"><span>Start an enquiry</span><svg class="ar" aria-hidden="true"><use href="#ar"/></svg></a></div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fcols">
+      <nav class="fc" aria-label="Footer pages"><p class="fh">Pages</p><ul><li><a href="../index.html">Home</a></li><li><a href="../projects.html">Projects</a></li><li><a href="../about.html">About</a></li><li><a href="../index.html#services">Services</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Privacy</a></li></ul></nav>
+      <nav class="fc" aria-label="Project categories"><p class="fh">Work</p><ul><li><a href="../projects.html?cat=sites">Websites</a></li><li><a href="../projects.html?cat=ai">AI &amp; apps</a></li><li><a href="../projects.html?cat=3d">3D &amp; interactive</a></li><li><a href="../projects.html?cat=labs">Experiments &amp; tools</a></li></ul></nav>
+      <nav class="fc" aria-label="Elsewhere"><p class="fh">Elsewhere</p><ul><li><a href="https://github.com/Jari344" target="_blank" rel="noopener">GitHub <span class="sr">(opens in new tab)</span></a></li><li><a href="https://youtube.com/@gpjcoding" target="_blank" rel="noopener">YouTube <span class="sr">(opens in new tab)</span></a></li><li><a href="https://www.instagram.com/jari786abbas" target="_blank" rel="noopener">Instagram <span class="sr">(opens in new tab)</span></a></li></ul></nav>
+    </div>
+    <p class="wm" aria-hidden="true">GPJ Codes</p>
+    <div class="ft"><span>Designed and built by Jari Abbas Rizvi</span><a href="#top" data-top>Back to top</a><span>© <span id="yr">2026</span> GPJ Codes</span></div>
+  </div>
+</footer>
+<script src="../js/data.js"></script>
+<script src="../js/site.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+<script defer src="../js/scenes.js"></script>
+<script defer src="../js/pages.js"></script>
+</body>
+</html>
